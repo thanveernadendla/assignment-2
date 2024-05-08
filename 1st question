@@ -32,3 +32,100 @@ int main() {
 
     return 0;
 }
+
+
+mammals and marine animals
+#include <iostream>
+using namespace std;
+
+class Mammals {
+public:
+    void mammalFunction() {
+        cout << "This is a function in the Mammals class." << endl;
+    }
+};
+
+class MarineAnimals {
+public:
+    void marineFunction() {
+        cout << "This is a function in the MarineAnimals class." << endl;
+    }
+};
+
+class BlueWhale : public Mammals, public MarineAnimals {
+public:
+    void blueWhaleFunction() {
+        cout << "This is a function in the BlueWhale class." << endl;
+    }
+};
+
+int main() {
+    BlueWhale whale;
+
+    whale.mammalFunction();
+    whale.marineFunction();
+    whale.blueWhaleFunction();
+
+    return 0;
+}
+
+write a program to find area of circle, rectangle and triangle using constructor overloading
+
+#include <iostream>
+
+class Shape {
+public:
+    Shape() {}
+    Shape(int r) : radius(r) {}
+    Shape(int l, int b) : length(l), breadth(b) {}
+    Shape(int b, int h, bool isTriangle) : base(b), height(h), isTriangle(isTriangle) {}
+
+    float calculateArea() {
+        if (isTriangle) {
+            return 0.5 * base * height;
+        } else if (radius != 0) {
+            return 3.14 * radius * radius;
+        } else {
+            return length * breadth;
+        }
+    }
+
+private:
+    int radius = 0;
+    int length = 0;
+    int breadth = 0;
+    int base = 0;
+    int height = 0;
+    bool isTriangle = false;
+};
+
+int main() {
+    Shape circle(3);
+    Shape rectangle(6, 7);
+    Shape triangle(2, 3, true);
+
+    std::cout << "Area of Circle: " << circle.calculateArea() << std::endl;
+    std::cout << "Area of Rectangle: " << rectangle.calculateArea() << std::endl;
+    std::cout << "Area of Triangle: " << triangle.calculateArea() << std::endl;
+
+    return 0;
+}
+
+create program to find the sum of series using the con 
+
+#include <iostream>
+int main() {
+    int n;
+    float sum = 0.0;
+
+    std::cout << "Enter the number of terms: ";
+    std::cin >> n;
+
+    for (int i = 1; i <= n; ++i) {
+        sum += 1.0 / i;
+    }
+
+    std::cout << "Sum of the series is: " << sum << std::endl;
+
+    return 0;
+}
